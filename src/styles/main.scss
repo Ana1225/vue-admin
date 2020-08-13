@@ -1,1 +1,9 @@
-@import './normalize.scss';
+@import "./normalize.scss";
+html,body {
+  margin: 0;
+  padding: 0;
+}
+div,p,h1~h6,ul,ol,li{
+    margin: 0;
+    padding: 0;
+}
