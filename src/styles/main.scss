@@ -1,9 +1,24 @@
 @import "./normalize.scss";
-html,body {
+@import "./config.scss";
+@import "./elementui.scss";
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+div,
+p,
+h1 ~ h6,
+ul,
+ol,
+li {
   margin: 0;
   padding: 0;
 }
-div,p,h1~h6,ul,ol,li{
-    margin: 0;
-    padding: 0;
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
 }

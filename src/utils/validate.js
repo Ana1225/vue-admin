@@ -16,6 +16,12 @@ export function validateTel(val) {
   return !reg.test(val) ? true : false;
 }
 
+// 验证邮箱
+export function validateMail(val) {
+  let reg = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+  return !reg.test(val) ? true : false;
+}
+
 // 验证密码
 export function validatePwd(val) {
   let reg = /^(?!\D+$)(?![^a-zA-Z]+$)\S{6,12}$/;
