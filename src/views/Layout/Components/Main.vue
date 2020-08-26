@@ -20,6 +20,17 @@ export default {}
   background: #f7f7f7;
   padding: 20px;
   padding-bottom: none;
-  box-sizing: border-box;
+  @include webkit(box-sizing, border-box);
+  @include webkit(transition, all 0.3s ease);
+}
+.open {
+  #main {
+    left: $navMenu;
+  }
+}
+.close {
+  #main {
+    left: $navMenuMin;
+  }
 }
 </style>

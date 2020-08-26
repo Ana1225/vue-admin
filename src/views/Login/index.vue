@@ -232,7 +232,8 @@ export default {
         password: ruleForm.passWord,
         code: ruleForm.code
       }
-      Login(reqData)
+      context.root.$store
+        .dispatch('app/login', reqData)
         .then(res => {
           // 登陆成功页面跳转
           context.root.$router.push({ name: 'Console' })
@@ -240,6 +241,14 @@ export default {
         .catch(err => {
           '登陆失败'
         })
+      // Login(reqData)
+      //   .then(res => {
+      //     // 登陆成功页面跳转
+      //     context.root.$router.push({ name: 'Console' })
+      //   })
+      //   .catch(err => {
+      //     '登陆失败'
+      //   })
     }
     // 注册
     const register = () => {
@@ -297,7 +306,7 @@ export default {
   width: 100vw;
   height: 100vh;
   // background: #5cbec1;
-  background-image: url('../../assets/login-bg.jpg');
+  background-image: url('../../assets/login-bg3.png');
   background-size: cover;
   background-position: 50%;
 

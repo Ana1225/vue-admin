@@ -2,8 +2,11 @@
   font-size: 14px;
   padding-left: 50px !important;
   &.is-active {
-    background-color: rgba(245, 108, 108, 0.2) !important;
+    background-color: rgba(45, 140, 240, 0.2) !important;
   }
+}
+.el-menu {
+  border-right: none !important;
 }
 // 修改一级菜单样式
 .el-submenu {
@@ -11,7 +14,38 @@
     background-color: $mainColor !important;
   }
 }
-
+.open {
+  .el-submenu__title {
+    width: $navMenu;
+  }
+}
+.close {
+  .el-submenu__title {
+    width: $navMenuMin;
+  }
+}
 .el-card {
   height: 100% !important;
+}
+// .close {
+//   .el-submenu {
+//     &.is-opened {
+//       > .el-submenu__title {
+//         background-color: $mainColor !important;
+//       }
+//     }
+//   }
+// }
+.el-menu--vertical {
+  .el-menu {
+    background-color: $mainColor !important;
+  }
+  .el-menu-item {
+    height: 45px;
+    line-height: 45px;
+  }
+  .el-menu-item:hover {
+    background-color: $mainColor !important;
+    color: #fff !important;
+  }
 }

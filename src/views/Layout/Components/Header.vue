@@ -1,28 +1,67 @@
 <template>
-  <div id="header">
-    <div class="pull-left header-icon"><i class="el-icon-watermelon"></i></div>
+  <div id="header-wrap">
+    <div class="pull-left header-icon" @click="navMenuState"><i class="el-icon-watermelon"></i></div>
     <div class="pull-right ">
       <div class="user-info pull-left">
-        管理员
+        {{username}}
       </div>
-      <div class="header-icon pull-left"><i class="el-icon-switch-button"></i></div>
+      <div class="header-icon pull-left" @click="exit"><i class="el-icon-switch-button"></i></div>
     </div>
   </div>
 </template>
 <script>
-export default {}
+import { reactive, ref, isRef, onMounted, computed } from '@vue/composition-api'
+
+export default {
+  name: 'header-wrap',
+  setup(props, { root }) {
+    // data
+
+    // computed
+    const username = computed(() => {
+      return root.$store.state.app.username
+    })
+    // menthod
+    const navMenuState = () => {
+      root.$store.commit('app/SET_COLLAPSE')
+    }
+    const exit = () => {
+      root.$store.dispatch('app/logout').then(() => {
+        root.$router.push({ name: 'Login' })
+      })
+    }
+
+    return {
+      navMenuState,
+      username,
+      exit
+    }
+  }
+}
 </script>
 <style lang="scss" scoped>
 @import '@/styles/config.scss';
-#header {
+#header-wrap {
   position: fixed;
   top: 0;
   left: $navMenu;
+  @include webkit(transition, all 0.3s ease);
   right: 0;
   height: 75px;
   line-height: 75px;
   background: #fff;
-  box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.1);
+  // box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.1);
+  @include webkit(box-shadow, 0 3px 16px 0 rgba(0, 0, 0, 0.1));
+}
+.open {
+  #header-wrap {
+    left: $navMenu;
+  }
+}
+.close {
+  #header-wrap {
+    left: $navMenuMin;
+  }
 }
 .header-icon {
   padding: 0 32px;
