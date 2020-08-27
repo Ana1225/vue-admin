@@ -1,6 +1,8 @@
 <template>
   <div id="header-wrap">
-    <div class="pull-left header-icon" @click="navMenuState"><i class="el-icon-watermelon"></i></div>
+    <div class="pull-left header-icon" @click="navMenuState">
+      <svg-icon iconClass="menu" className="menu"></svg-icon>
+    </div>
     <div class="pull-right ">
       <div class="user-info pull-left">
         {{username}}

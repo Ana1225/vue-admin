@@ -28,7 +28,7 @@ const routes = [
     name: "Console",
     meta: {
       name: "控制台",
-      icon: "el-icon-watermelon",
+      icon: "console",
     },
     redirect: "index",
     component: () =>
@@ -50,7 +50,7 @@ const routes = [
     name: "Info",
     meta: {
       name: "信息管理",
-      icon: "el-icon-milk-tea",
+      icon: "goods",
     },
     component: () =>
       import(/* webpackChunkName: "console" */ "../views/Layout/index.vue"),
@@ -80,7 +80,7 @@ const routes = [
     name: "User",
     meta: {
       name: "用户管理",
-      icon: "el-icon-ice-cream-round",
+      icon: "user",
     },
     component: () =>
       import(/* webpackChunkName: "console" */ "../views/Layout/index.vue"),

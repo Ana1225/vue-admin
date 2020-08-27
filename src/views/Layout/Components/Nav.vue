@@ -8,7 +8,8 @@
         <el-submenu :index="index +'' " v-if="!item.hidden" :key="item.id">
           <!-- 一级菜单 -->
           <template slot="title">
-            <i :class="item.meta.icon"></i>
+            <!-- <i :class="item.meta.icon"></i> -->
+            <svg-icon :iconClass="item.meta.icon" :className="item.meta.icon"></svg-icon>
             <span slot="title">{{item.meta.name}}</span>
           </template>
           <!-- 子菜单 -->
@@ -52,6 +53,12 @@ export default {
   height: 100vh;
   background: #001529;
   @include webkit(transition, all 0.3s ease);
+  .el-submenu {
+    svg {
+      font-size: 24px;
+      margin-right: 5px;
+    }
+  }
   .logo {
     text-align: center;
     img {
