@@ -77,6 +77,7 @@ export default {
     let validatePassWord = (rule, value, callback) => {
       ruleForm.passWord = stripscript(value)
       value = ruleForm.passWord
+      console.log('测试一下是否能正常提交');            
 
       if (value === '') {
         callback(new Error('请输入密码'))
